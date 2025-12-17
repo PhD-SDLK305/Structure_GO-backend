@@ -1,11 +1,14 @@
 server:
-  port: 3000
-mysql:
-  host: localhost
-  port: 3306
-  username: root
-  passwrod: passwrod
-  dbname: test
-  maxIdleConns: 10
-  maxOpenConns: 100
-  connMaxLifeTime: 300
+  port: 8082
+databases:
+  - user: admin
+    passwrod: admin
+    host: localhost
+    dbName: test
+  - user: client
+    passwrod: client
+    host: localhost
+    dbName: test
+security:
+  jwt:
+    key: test
