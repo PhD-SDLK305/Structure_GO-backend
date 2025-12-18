@@ -1,14 +1,18 @@
 package initialize
 
-import "gobackend/globals"
+import (
+	"gobackend/globals"
+
+	"go.uber.org/zap"
+)
 
 func Run() {
 	LoadConfig()
 	InitLogger()
-	println(globals.Config.Mysql.Host)
+	globals.Logger.Info("config logger ok", zap.String("ok", "success"))
 	InitMysql()
 	InitRedis()
-	// r := InitRouter()
+	r := InitRouter()
 
-	// r.Run(":3000")
+	r.Run(":3000")
 }

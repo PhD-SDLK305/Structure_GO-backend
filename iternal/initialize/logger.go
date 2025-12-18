@@ -1,5 +1,10 @@
 package initialize
 
-func InitLogger() {
+import (
+	"gobackend/globals"
+	"gobackend/pkg/logger"
+)
 
+func InitLogger() {
+	globals.Logger = logger.NewLogger(globals.Config.Logger)
 }
